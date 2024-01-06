@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3d8qcg0hbkhk"]
+
+[ext_resource type="Script" path="res://target.gd" id="1_chvkx"]
+[ext_resource type="Texture2D" uid="uid://bmx5k3rxfcwt8" path="res://graphics/PNG/Objects/target_red1.png" id="1_o2tuy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oj36m"]
+radius = 64.0312
+
+[node name="Target" type="Node2D"]
+script = ExtResource("1_chvkx")
+
+[node name="Target_Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_o2tuy")
+
+[node name="Area2D" type="Area2D" parent="Target_Image"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target_Image/Area2D"]
+shape = SubResource("CircleShape2D_oj36m")
+
+[connection signal="input_event" from="Target_Image/Area2D" to="." method="_on_area_2d_input_event"]
