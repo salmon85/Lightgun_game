@@ -2,8 +2,6 @@ extends Node2D
 
 class_name Target
 
-
-
 @export var alive: bool
 var delay: float = 10.0
 var shot: bool = false
